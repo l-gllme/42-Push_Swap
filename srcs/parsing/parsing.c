@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 18:19:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/07 18:13:36 by lguillau         ###   ########.fr       */
+/*   Created: 2022/01/07 18:26:22 by lguillau          #+#    #+#             */
+/*   Updated: 2022/01/07 18:29:58 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAPP_H
-# define PUSH_SWAPP_H
+#include "parsing.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-
-# include "srcs/parsing/parsing.h"
-
-#endif
+int	ft_parse(char *s)
+{
+	if (check_for_alpha(s))
+		return (0);
+}

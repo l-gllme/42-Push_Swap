@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 18:19:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/07 18:13:36 by lguillau         ###   ########.fr       */
+/*   Created: 2022/01/07 18:14:35 by lguillau          #+#    #+#             */
+/*   Updated: 2022/01/07 18:25:48 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAPP_H
-# define PUSH_SWAPP_H
+#include "parsing.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+int	check_for_alpha(char *s)
+{
+	int	i;
 
-# include "srcs/parsing/parsing.h"
-
-#endif
+	i = -1;
+	while (s[++i])
+		if (s[i] < '0' || s[i] > '9')
+			return (1);
+	return (0);
+}

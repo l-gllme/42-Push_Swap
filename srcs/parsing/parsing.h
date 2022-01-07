@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 17:42:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/07 17:53:31 by lguillau         ###   ########.fr       */
+/*   Created: 2022/01/07 18:11:42 by lguillau          #+#    #+#             */
+/*   Updated: 2022/01/07 18:28:52 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#ifndef PARSING_H
+# define PARSING_H
 
-int	main(int argc, char **argv)
-{
-	return (0);
-}
+/* Parsing Functs */
+
+/* Tools Functs */
+
+char	**ft_split(char const *s, char c);
+int	check_for_alpha(char *s);
+
+#endif

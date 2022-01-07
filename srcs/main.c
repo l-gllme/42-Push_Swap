@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 18:19:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/07 18:13:36 by lguillau         ###   ########.fr       */
+/*   Created: 2022/01/07 17:42:44 by lguillau          #+#    #+#             */
+/*   Updated: 2022/01/07 18:10:07 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAPP_H
-# define PUSH_SWAPP_H
+#include "../includes/push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-
-# include "srcs/parsing/parsing.h"
-
-#endif
+int	main(int argc, char **argv)
+{
+	return (0);
+}
