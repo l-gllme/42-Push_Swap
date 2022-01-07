@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 18:14:00 by lguillau          #+#    #+#             */
-/*   Updated: 2021/12/16 18:15:20 by lguillau         ###   ########.fr       */
+/*   Created: 2022/01/07 17:42:44 by lguillau          #+#    #+#             */
+/*   Updated: 2022/01/07 17:53:31 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swapp.h"
+#include "includes/push_swap.h"
 
 int	main(int argc, char **argv)
 {
