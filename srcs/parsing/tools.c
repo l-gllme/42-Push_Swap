@@ -6,11 +6,11 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:14:35 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/07 18:25:48 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/07 18:32:58 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
+#include "../../includes/parsing.h"
 
 int	check_for_alpha(char *s)
 {

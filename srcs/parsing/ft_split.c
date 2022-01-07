@@ -6,11 +6,11 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 19:01:37 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/07 18:15:41 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/07 18:31:51 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
+#include "../../includes/parsing.h"
 
 static int	check_charset(char c, char current)
 {
