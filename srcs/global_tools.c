@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.h                                          :+:      :+:    :+:   */
+/*   global_tools.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/07 18:11:42 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/07 18:34:51 by lguillau         ###   ########.fr       */
+/*   Created: 2022/01/11 13:19:46 by lguillau          #+#    #+#             */
+/*   Updated: 2022/01/11 13:25:40 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSING_H
-# define PARSING_H
+#include "../includes/push_swap.h"
 
-/* Parsing Functs */
+void	ft_error(void)
+{
+	write(1, "Error\n", 6);
+	exit(1);
+}
 
-/* Tools Functs */
+int	ft_is_it_sorted(void)
+{
 
-char	**ft_split(char const *s, char c);
-int		check_for_alpha(char *s);
-
-#endif
+}

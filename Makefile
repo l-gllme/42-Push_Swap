@@ -6,12 +6,11 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/07 18:11:15 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/11 13:01:33 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	srcs/main.c \
-		srcs/parsing/
 
 OBJS	=	${SRCS:.c=.o}
 
@@ -24,7 +23,7 @@ RM	=	rm -f
 CFLAGS	=	-Wall -Wextra -Werror
 
 ${NAME}:	${OBJS}
-		${CC} -o ${NAME} ${OBJS}
+		${CC} ${OBJS} -o ${NAME}
 
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}

@@ -1,0 +1,7 @@
+Push Swapp
+
+====> Parsing <====
+
+check doublons
+
+argv "10 5 2 9 13" -> int *

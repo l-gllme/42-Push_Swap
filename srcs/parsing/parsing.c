@@ -6,14 +6,23 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:26:22 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/07 18:32:20 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/11 13:19:23 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/parsing.h"
+#include "../../includes/push_swap.h"
 
-int	ft_parse(char *s)
+int	ft_parse(int ac, char **av)
 {
-	if (check_for_alpha(s))
-		return (0);
+	t_stacks	stacks;
+	
+	if (ac > 2)
+	{
+
+	}
+	else
+	{
+
+	}
+	return (stacks);
 }

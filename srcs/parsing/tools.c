@@ -6,13 +6,13 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:14:35 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/07 18:32:58 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/11 12:56:00 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/parsing.h"
+#include "../../includes/push_swap.h"
 
-int	check_for_alpha(char *s)
+int	ft_check_for_alpha(char *s)
 {
 	int	i;
 
