@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 13:19:46 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/11 13:25:40 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/11 14:14:12 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,17 @@ void	ft_error(void)
 	exit(1);
 }
 
-int	ft_is_it_sorted(void)
+int	ft_is_it_sorted(int *tab, int len)
 {
+	int	i;
 
+	i = 0;
+	while (i < len)
+	{
+		if (tab[i] < tab[i + 1])
+			i++;
+		else
+			return (0);
+	}
+	return (1);
 }

@@ -5,3 +5,5 @@ Push Swapp
 check doublons
 
 argv "10 5 2 9 13" -> int *
+
+av -> join avec un " " puis split puis tab dint

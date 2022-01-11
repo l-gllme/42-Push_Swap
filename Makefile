@@ -6,11 +6,15 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/11 13:01:33 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/11 15:05:31 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	srcs/main.c \
+		srcs/global_tools.c \
+		srcs/parsing/check_av.c \
+		srcs/parsing/ft_split.c \
+		srcs/parsing/parsing.c \
 
 OBJS	=	${SRCS:.c=.o}
 
