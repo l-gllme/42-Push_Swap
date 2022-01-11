@@ -6,15 +6,14 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/11 15:05:31 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/11 17:30:43 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	srcs/main.c \
 		srcs/global_tools.c \
-		srcs/parsing/check_av.c \
-		srcs/parsing/ft_split.c \
-		srcs/parsing/parsing.c \
+		srcs/parsing/parsing_tools.c \
+		srcs/parsing/main_parsing.c \
 
 OBJS	=	${SRCS:.c=.o}
 
@@ -27,7 +26,8 @@ RM	=	rm -f
 CFLAGS	=	-Wall -Wextra -Werror
 
 ${NAME}:	${OBJS}
-		${CC} ${OBJS} -o ${NAME}
+		make -C libft
+		${CC} ${OBJS} libft/libft.a -o ${NAME}
 
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -41,7 +41,13 @@ clean:
 fclean:		clean
 		${RM} ${NAME}
 
-re:		fclean all
+libfclean:	
+		make -C libft fclean
+
+aclean:	fclean libfclean
+
+		
+re:		libfclean fclean all
 
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re libfclean aclean

@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 18:19:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/11 15:04:50 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/11 17:13:56 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
+
+# include "../libft/libft.h"
 
 /* -- Stuct -- */
 
@@ -35,8 +38,7 @@ int	ft_is_it_sorted(int *tab, int len);
 /* -- Parsing -- */
 
 t_stack	ft_parse(int ac, char **av);
-char	*ft_join_argv(char **av);
-char	**ft_split(char const *s, char c);
+char	*ft_join_argv(int ac, char **av);
 int	ft_check_for_alpha(char *s);
 void	ft_check_argv(char **av);
 
