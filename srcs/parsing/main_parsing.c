@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:26:22 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/12 19:08:47 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/12 19:15:59 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_stack	ft_parse(int ac, char **av)
 
 static	int	ft_check_for_max_int(char **str)
 {
+	int	i;
 }
 
 t_stack	*ft_create_stack(char **av)
