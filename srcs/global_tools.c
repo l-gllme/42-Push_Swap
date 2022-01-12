@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 13:19:46 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/11 17:06:02 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/12 18:34:17 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,14 @@ int	ft_is_it_sorted(int *tab, int len)
 			return (0);
 	}
 	return (1);
+}
+
+void	ft_free_char_star_star(char **str)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
+		free(str[i]);
+	free(str);
 }

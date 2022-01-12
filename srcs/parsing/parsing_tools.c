@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:14:35 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/11 17:06:21 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/12 18:31:20 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,42 @@ void	ft_check_argv(char **av)
 		else
 			i++;
 	}
+}
+
+static int	ft_total_len(char **str)
+{
+	int	i;
+	int	len;
+
+	len = 0;
+	i = 0;
+	while (str[++i])
+		len += ft_strlen(str[i]);
+	return (len + i);
+}
+
+char	*ft_modified_join(char **str)
+{
+	int	i;
+	int	j;
+	char	*s1;
+
+	i = 0;
+	j = 0;
+	s1 = malloc(sizeof(char *) * (ft_total_len(str) + 1));
+	if (!s1)
+		return (NULL);
+	while (str[++i])
+	{
+		while (*str[i])
+		{
+			s1[j] = *str[i];
+			j++;
+			str[i]++;
+		}
+		s1[j] = ' ';
+		j++;
+	}
+	s1[j] = 0;
+	return (s1);
 }
