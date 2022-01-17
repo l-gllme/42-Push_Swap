@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:14:35 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/12 18:31:20 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/17 18:15:45 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ static int	ft_total_len(char **str)
 
 char	*ft_modified_join(char **str)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	*s1;
 
 	i = 0;
