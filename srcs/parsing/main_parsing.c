@@ -6,44 +6,61 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:26:22 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/17 18:12:36 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/17 19:19:43 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_stack	*ft_parse(char **av)
+int	ft_parse(char **av, t_stack *stacks)
 {
-	t_stack	*stacks;
-	int		i;
+	int	i;
+	int	ret;
 
 	i = -1;
 	ft_check_argv(av);
-	stacks = ft_create_stack(av);
+	ret = ft_create_stack(av, stacks);
+	if (ret == 0)
+		return (0);
 	while (++i < stacks->len_a)
 	{
 		if (stacks->stack_a[i] > 2147483647 || stacks->stack_a[i] < -2147483648)
 		{
-			free(stacks->stack_a);
-			free(stacks->stack_b);
-			free(stacks);
-		}
+			ft_free_stacks(stacks);
+			exit(1);
+		}	
 	}
-	return (stacks);
+	if (ft_is_it_sorted(stacks->stack_a, stacks->len_a))
+	{
+		ft_free_stacks(stacks);
+		exit(1);
+	}
+	if (ft_check_dup(stacks->stack_a, stacks->len_a))
+	{
+		ft_free_stacks(stacks);
+		exit(1);
+	}
+	return (1);
 }
 
-t_stack	*ft_create_stack(char **av)
+int	ft_create_stack(char **av, t_stack *stacks)
 {
-	t_stack	*stacks;
 	char	*joined_str;
 	char	**str;
+	int		ret;
 
 	joined_str = ft_modified_join(av);
 	str = ft_split(joined_str, ' ');
 	free(joined_str);
-	stacks = ft_fill_stack(str);
+	ret = ft_fill_stack(str, stacks);
+	if (ret == 0)
+	{
+		if (stacks->stack_a)
+			free(stacks->stack_a);
+		return (0);
+	}
 	ft_free_char_star_star(str);
-	return (stacks);
+	return (1);
 }
 
 static	int	ft_char_star_star_len(char **str)
@@ -56,30 +73,26 @@ static	int	ft_char_star_star_len(char **str)
 	return (i);
 }
 
-t_stack	*ft_fill_stack(char **str)
+int	ft_fill_stack(char **str, t_stack *stacks)
 {
-	t_stack			*stacks;
 	int				i;
 	int				len;
 	long long int	nb;
 
 	i = -1;
-	stacks = malloc(sizeof(struct s_list) * 1);
-	if (!stacks)
-		exit(1);
 	len = ft_char_star_star_len(str);
 	stacks->stack_a = malloc(sizeof(int *) * len);
 	if (!stacks->stack_a)
-		exit(1);
+		return (0);
 	stacks->len_a = len;
 	stacks->stack_b = malloc(sizeof(int *) * len);
 	if (!stacks->stack_b)
-		exit(1);
+		return (0);
 	stacks->len_b = len;
 	while (str[++i])
 	{
 		nb = ft_atoi(str[i]);
 		stacks->stack_a[i] = nb;
 	}
-	return (stacks);
+	return (1);
 }

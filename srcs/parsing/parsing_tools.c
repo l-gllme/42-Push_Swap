@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:14:35 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/17 18:15:45 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/17 19:18:01 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,24 @@ char	*ft_modified_join(char **str)
 	}
 	s1[j] = 0;
 	return (s1);
+}
+
+int	ft_check_dup(int *tab, int len)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < len)
+	{
+		j = 0;
+		while (j < len)
+		{
+			if (tab[i] == tab[j] && i != j )
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }

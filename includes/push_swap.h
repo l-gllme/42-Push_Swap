@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 18:19:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/17 18:16:58 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/17 19:18:42 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,17 @@ typedef struct s_list
 void	ft_error(void);
 int		ft_is_it_sorted(int *tab, int len);
 void	ft_free_char_star_star(char **str);
+void	ft_free_stacks(t_stack *s);
 
 /* -- Parsing -- */
 
-t_stack	*ft_parse(char **av);
-t_stack	*ft_create_stack(char **av);
-t_stack	*ft_fill_stack(char **str);
+int		ft_parse(char **av, t_stack *stacks);
+int		ft_create_stack(char **av, t_stack *stacks);
+int		ft_fill_stack(char **str, t_stack *stacks);
 char	*ft_modified_join(char **str);
 int		ft_check_for_alpha(char *s);
 void	ft_check_argv(char **av);
+int		ft_check_dup(int *tab, int len);
 
 /* -- Operations -- */
 
