@@ -6,37 +6,43 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/17 18:19:58 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/18 12:15:20 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	srcs/main.c \
-		srcs/global_tools.c \
-		srcs/parsing/parsing_tools.c \
-		srcs/parsing/main_parsing.c \
+FILES	=	main.c \
+		global_tools.c \
+		parsing/parsing_tools.c \
+		parsing/main_parsing.c \
 
-OBJS	=	${SRCS:.c=.o}
+SRCS_PATH =	./srcs/
+OBJS_PATH =	./objs/
+
+SRCS	=	${addprefix ${SRCS_PATH}, ${FILES}}
+OBJS	=	${addprefix ${OBJS_PATH}, ${FILES:.c=.o}}
 
 NAME	=	push_swap
 
 CC	=	clang
 
-RM	=	rm -f
+RM	=	rm -rf
 
 CFLAGS	=	-Wall -Wextra -Werror
+
+${OBJS_PATH}%.o:${SRCS_PATH}%.c
+		@mkdir -p ${dir $@}
+		${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}:	${OBJS}
 		make -C libft
 		${CC} ${OBJS} libft/libft.a -o ${NAME}
 
-.c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 all:		${NAME}
 
 
 clean:		
-		${RM} ${OBJS}
+		${RM} ${OBJS_PATH}
 
 fclean:		clean
 		${RM} ${NAME}
@@ -44,7 +50,7 @@ fclean:		clean
 libfclean:	
 		make -C libft fclean
 
-aclean:	fclean libfclean
+aclean:		fclean libfclean
 
 		
 re:		libfclean fclean all

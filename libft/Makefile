@@ -6,7 +6,7 @@
 #    By: lguillau <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 18:02:12 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/18 11:45:19 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/18 12:14:17 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,10 +70,11 @@ RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
-			${CC} ${CFLAGS} -I ${HEADERS} -c $< -o ${<:.c=.o}
+			@${CC} ${CFLAGS} -I ${HEADERS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			ar rc ${NAME} ${OBJS}
+			@ar rc ${NAME} ${OBJS}
+			@echo "Compiling Libft"
 
 all:		${NAME}
 
