@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 18:19:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/17 19:18:42 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/18 15:06:21 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 # include "../libft/libft.h"
 
-/* -- Stuct -- */
+/* ~-~-~ Stuct ~-~-~ */
 
 typedef struct s_list
 {
@@ -30,14 +30,14 @@ typedef struct s_list
 
 }	t_stack;
 
-/* -- Global Tools -- */
+/* ~-~-~ Global Tools ~-~-~ */
 
 void	ft_error(void);
 int		ft_is_it_sorted(int *tab, int len);
 void	ft_free_char_star_star(char **str);
 void	ft_free_stacks(t_stack *s);
 
-/* -- Parsing -- */
+/* ~-~-~ Parsing ~-~-~ */
 
 int		ft_parse(char **av, t_stack *stacks);
 int		ft_create_stack(char **av, t_stack *stacks);
@@ -47,6 +47,16 @@ int		ft_check_for_alpha(char *s);
 void	ft_check_argv(char **av);
 int		ft_check_dup(int *tab, int len);
 
-/* -- Operations -- */
+/* ~-~-~ Operations ~-~-~ */
+
+void	sa(t_stack *s);
+void	sb(t_stack *s);
+void	ss(t_stack *s);
+void	pa(t_stack *s);
+void	pb(t_stack *s);
+
+/* ~ Op tools ~ */
+int	*supp_first_elem(int *tab, int len);
+int	*add_first_elem(int *tab, int len, int nb);
 
 #endif

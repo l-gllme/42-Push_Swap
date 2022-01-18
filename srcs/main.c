@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:42:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/17 19:05:06 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/18 15:08:48 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 		exit(1);
 	}
 	int i = 0;
+	sa(stacks);
 	while (i < stacks->len_a)
 	{
 		printf("~%d~\n", stacks->stack_a[i]);

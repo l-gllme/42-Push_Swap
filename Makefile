@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/18 12:15:20 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/18 15:07:27 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ FILES	=	main.c \
 		global_tools.c \
 		parsing/parsing_tools.c \
 		parsing/main_parsing.c \
+		operations/operations.c \
+		operations/operations3.c \
 
 SRCS_PATH =	./srcs/
 OBJS_PATH =	./objs/

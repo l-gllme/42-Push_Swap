@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:26:22 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/18 11:38:43 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/18 14:19:41 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	ft_fill_stack(char **str, t_stack *stacks)
 	stacks->stack_b = malloc(sizeof(int *) * len);
 	if (!stacks->stack_b)
 		return (0);
-	stacks->len_b = len;
+	stacks->len_b = 0;
 	while (str[++i])
 	{
 		nb = ft_atoi(str[i]);
