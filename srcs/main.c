@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:42:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/18 15:08:48 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/18 20:19:31 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,23 @@ int	main(int argc, char **argv)
 		exit(1);
 	}
 	int i = 0;
-	sa(stacks);
+	pb(stacks);	
+	pb(stacks);	
+	pb(stacks);	
+	pb(stacks);	
+	pa(stacks);	
+	pa(stacks);	
+	pa(stacks);	
+	pa(stacks);	
 	while (i < stacks->len_a)
 	{
-		printf("~%d~\n", stacks->stack_a[i]);
+		printf("~a%d~\n", stacks->stack_a[i]);
+		i++;
+	}
+	i = 0;
+	while (i < stacks->len_b)
+	{
+		printf("~b%d~\n", stacks->stack_b[i]);
 		i++;
 	}
 	ft_free_stacks(stacks);

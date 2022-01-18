@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 19:01:37 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/18 11:47:53 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/18 20:14:22 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ char	**ft_split(char const *s, char c)
 	int		j;
 
 	i = 0;
-	j = -1;
+	j = 0;
 	if (!s)
 		return (0);
 	str = malloc(sizeof(char *) * words_count(s, c) + 1);
@@ -102,9 +102,10 @@ char	**ft_split(char const *s, char c)
 			i++;
 		else
 		{
-			str[++j] = dupword(s + i, c, wordlen(s + i, c));
-			if (!str[j])
+			str[j] = dupword(s + i, c, wordlen(s + i, c));
+			if (str[j] == NULL)
 				return (ft_split_free(str));
+			j++;
 			i += wordlen(s + i, c);
 		}
 	}
