@@ -6,7 +6,7 @@
 #    By: lguillau <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 18:02:12 by lguillau          #+#    #+#              #
-#    Updated: 2021/11/24 15:23:09 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/18 11:45:19 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRCS	= 	./ft_atoi.c \
 		./ft_strjoin.c \
 		./ft_strlcat.c \
 		./ft_split.c \
+		./ft_split_free.c \
 		./ft_strmapi.c \
 		./ft_substr.c \
 		./ft_strtrim.c \

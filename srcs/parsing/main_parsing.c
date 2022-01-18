@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:26:22 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/17 19:19:43 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/18 11:38:43 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,15 @@ int	ft_parse(char **av, t_stack *stacks)
 	ret = ft_create_stack(av, stacks);
 	if (ret == 0)
 		return (0);
-	while (++i < stacks->len_a)
-	{
-		if (stacks->stack_a[i] > 2147483647 || stacks->stack_a[i] < -2147483648)
-		{
-			ft_free_stacks(stacks);
-			exit(1);
-		}	
-	}
 	if (ft_is_it_sorted(stacks->stack_a, stacks->len_a))
 	{
 		ft_free_stacks(stacks);
-		exit(1);
+		ft_error();
 	}
 	if (ft_check_dup(stacks->stack_a, stacks->len_a))
 	{
 		ft_free_stacks(stacks);
-		exit(1);
+		ft_error();
 	}
 	return (1);
 }
@@ -50,8 +42,12 @@ int	ft_create_stack(char **av, t_stack *stacks)
 	int		ret;
 
 	joined_str = ft_modified_join(av);
+	if (!joined_str)
+		return (0);
 	str = ft_split(joined_str, ' ');
 	free(joined_str);
+	if (!str)
+		return (0);
 	ret = ft_fill_stack(str, stacks);
 	if (ret == 0)
 	{
@@ -92,6 +88,11 @@ int	ft_fill_stack(char **str, t_stack *stacks)
 	while (str[++i])
 	{
 		nb = ft_atoi(str[i]);
+		if (nb > 2147483647 || nb < -2147483648)
+		{
+			ft_free_stacks(stacks);
+			ft_error();
+		}
 		stacks->stack_a[i] = nb;
 	}
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:14:35 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/17 19:18:01 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/18 11:29:25 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	ft_check_dup(int *tab, int len)
 		j = 0;
 		while (j < len)
 		{
-			if (tab[i] == tab[j] && i != j )
+			if (tab[i] == tab[j] && i != j)
 				return (1);
 			j++;
 		}
