@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 13:19:46 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/18 20:06:39 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/19 12:30:02 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,21 @@ void	ft_free_stacks(t_stack *s)
 int	ft_is_it_sorted(int *tab, int len)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (tab[i] < tab[i + 1] && i < len - 1)
+	while (i < len - 1)
+	{
+		j = 0;
+		while (tab[j + i])
+		{
+			if (tab[i] > tab[j + i])
+				return (0);
+			j++;
+		}
 		i++;
-	if (i == len - 1 && tab[i] < tab[i + 1])
-		return (1);
-	return (0);
+	}
+	return (1);
 }
 
 void	ft_free_char_star_star(char **str)

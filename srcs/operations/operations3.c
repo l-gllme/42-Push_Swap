@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:30:24 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/18 15:08:09 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/19 12:29:31 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	*add_first_elem(int *tab, int len, int nb)
 {
 	int	i;
 	int	tmp;
-	int 	tmpbis;
+	int	tmpbis;
 
 	i = 0;
 	if (!tab[0])

@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 18:19:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/18 15:06:21 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/19 12:28:39 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	pa(t_stack *s);
 void	pb(t_stack *s);
 
 /* ~ Op tools ~ */
-int	*supp_first_elem(int *tab, int len);
-int	*add_first_elem(int *tab, int len, int nb);
+int		*supp_first_elem(int *tab, int len);
+int		*add_first_elem(int *tab, int len, int nb);
 
 #endif
