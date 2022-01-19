@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:42:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/19 11:52:19 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/19 18:24:49 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ static void sprint(t_stack *stacks)
 	int i = 0;
 	while (i < stacks->len_a)
 	{
-		printf("~a[%d]=%d\n", stacks->len_a, stacks->stack_a[i]);
+		printf("~a=%d\n", stacks->stack_a[i]);
 		i++;
 	}
 	i = 0;
 	while (i < stacks->len_b)
 	{
-		printf("~b[%d]=%d\n", stacks->len_b, stacks->stack_b[i]);
+		printf("~b=%d\n", stacks->stack_b[i]);
 		i++;
 	}
 }
@@ -46,8 +46,8 @@ int	main(int argc, char **argv)
 		exit(1);
 	}
 	sprint(stacks);
-	pb(stacks);	
-	pb(stacks);	
+	pb(stacks);
+	pa(stacks);	
 	sprint(stacks);
 	ft_free_stacks(stacks);
 	return (0);
