@@ -6,17 +6,20 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/20 14:37:34 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/24 14:58:05 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILES	=	./main.c \
-		parsing/2_parsing_tools.c \
-		parsing/parsing_tools.c \
+		parsing/01_ptools.c \
+		parsing/02_ptools.c \
 		parsing/main_parsing.c \
 		libft/ft_strlen.c \
 		libft/ft_split.c \
 		libft/ft_atoi.c \
+		operations/01op.c \
+		operations/02op.c \
+		operations/03op.c \
 
 SRCS_PATH =	./srcs/
 OBJS_PATH =	./objs/

@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:26:22 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/18 20:11:03 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/24 14:52:09 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ static	int	ft_char_star_star_len(char **str)
 
 int	ft_fill_stack(char **str, t_stack *stacks)
 {
-	int				i;
-	int				len;
-	long long int	nb;
+	int		i;
+	int		len;
+	t_lint	nb;
 
 	i = -1;
 	len = ft_char_star_star_len(str);
