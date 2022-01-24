@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 22:48:47 by lguillau          #+#    #+#             */
-/*   Updated: 2021/11/15 14:12:17 by lguillau         ###   ########.fr       */
+/*   Created: 2022/01/20 12:46:18 by lguillau          #+#    #+#             */
+/*   Updated: 2022/01/20 14:37:44 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	ft_isalpha(int c)
-{
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
-}
+# include <stdlib.h>
+# include <unistd.h>
+
+typedef long long int llint;
+
+size_t	ft_strlen(const char *s);
+llint	ft_atoi(const char *str);
+char	**ft_split(char const *s, char c);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 18:19:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/19 12:28:39 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/24 13:18:08 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-# include "../libft/libft.h"
+# include "libft.h"
 
 /* ~-~-~ Stuct ~-~-~ */
 

@@ -6,11 +6,11 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 19:01:37 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/18 20:14:22 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/20 14:02:10 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 static int	check_charset(char c, char current)
 {
@@ -103,8 +103,6 @@ char	**ft_split(char const *s, char c)
 		else
 		{
 			str[j] = dupword(s + i, c, wordlen(s + i, c));
-			if (str[j] == NULL)
-				return (ft_split_free(str));
 			j++;
 			i += wordlen(s + i, c);
 		}
