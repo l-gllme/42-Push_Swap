@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 18:19:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 14:49:27 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/24 16:22:44 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,8 @@ void	sb(t_stack *s);
 void	ss(t_stack *s);
 void	pa(t_stack *s);
 void	pb(t_stack *s);
+void	ra(t_stack *s);
+void	rb(t_stack *s);
+void	rr(t_stack *s);
 
 #endif

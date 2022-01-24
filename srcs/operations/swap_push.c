@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 13:57:46 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 15:21:14 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/24 15:32:01 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ss(t_stack *s)
 	int	tmp;
 
 	write(1, "ss\n", 3);
-	if ((s->len_a || s->len_b) < 2)
+	if (s->len_a < 2 || s->len_b < 2)
 		return ;
 	tmp = s->stack_a[0];
 	s->stack_a[0] = s->stack_a[1];
@@ -60,30 +60,33 @@ void	pa(t_stack *s)
 	if (s->len_b == 0)
 		return ;
 	i = -1;
-	tmp = s->tab_b[0];
+	tmp = s->stack_b[0];
 	while (++i < s->len_b - 1)
-		s->tab_b[i] = s->tab_b[i + 1];
+		s->stack_b[i] = s->stack_b[i + 1];
 	s->len_b--;
 	i = s->len_a;
 	while (--i >= 0)
-		s->tab_a[i + 1] = s->tab_a[i];
-	s->tab[i] = tmp;
+		s->stack_a[i + 1] = s->stack_a[i];
+	s->stack_a[0] = tmp;
 	s->len_a++;
 }
 
 void	pb(t_stack *s)
 {
+	int	tmp;
+	int	i;
+
 	write(1, "pb\n", 3);
 	if (s->len_a == 0)
 		return ;
 	i = -1;
-	tmp = s->tab_a[0];
+	tmp = s->stack_a[0];
 	while (++i < s->len_a - 1)
-		s->tab_a[i] = s->tab_a[i + 1];
+		s->stack_a[i] = s->stack_a[i + 1];
 	s->len_a--;
 	i = s->len_b;
 	while (--i >= 0)
-		s->tab_b[i + 1] = s->tab_b[i];
-	s->tab[i] = tmp;
+		s->stack_b[i + 1] = s->stack_b[i];
+	s->stack_b[0] = tmp;
 	s->len_b++;
 }
