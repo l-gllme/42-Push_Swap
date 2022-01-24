@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/24 19:42:51 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/24 21:21:22 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,9 +47,7 @@ ${NAME}:	${OBJS}
 		@echo ""
 		@echo "\e[3;32mCompilation is completed !\e[0m"
 
-
 all:		${NAME}
-
 
 clean:		
 		@${RM} ${O_PATH}
