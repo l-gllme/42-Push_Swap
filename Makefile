@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/24 19:33:05 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/24 19:42:51 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ CFLAGS	=	-Wall -Wextra -Werror
 ${O_PATH}%.o:	${S_PATH}%.c
 		@mkdir -p ${dir $@}
 		@${CC} ${CFLAGS} -c $< -o $@
-		@echo "\e[33mCompiling\e[0m \e[40m$<\e[0m"
+		@echo "\e[33mCompiling\e[0m \e[40m$<\e[0m \e[1;33m->\e[0m \e[94m$@\e[0m"
 
 ${NAME}:	${OBJS}
 		@${CC} ${OBJS} -o ${NAME}
