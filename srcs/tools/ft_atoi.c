@@ -6,11 +6,11 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 21:03:25 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 14:58:27 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/24 19:29:55 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/tools.h"
 
 t_lint	ft_atoi(const char *str)
 {

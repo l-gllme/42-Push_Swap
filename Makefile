@@ -6,17 +6,17 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/24 16:29:56 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/24 19:33:05 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILES	=	./main.c \
+FILES	=	main.c \
 		parsing/parsing_tools.c \
-		parsing/tools.c \
 		parsing/main_parsing.c \
-		libft/ft_strlen.c \
-		libft/ft_split.c \
-		libft/ft_atoi.c \
+		tools/tools.c \
+		tools/ft_strlen.c \
+		tools/ft_split.c \
+		tools/ft_atoi.c \
 		operations/reverse_rotate.c \
 		operations/rotate.c \
 		operations/swap_push.c \
@@ -38,22 +38,31 @@ CFLAGS	=	-Wall -Wextra -Werror
 ${O_PATH}%.o:	${S_PATH}%.c
 		@mkdir -p ${dir $@}
 		@${CC} ${CFLAGS} -c $< -o $@
+		@echo "\e[33mCompiling\e[0m \e[40m$<\e[0m"
 
 ${NAME}:	${OBJS}
-		@echo "Compiling..."
 		@${CC} ${OBJS} -o ${NAME}
+		@echo ""
+		@echo "\e[36mBuilding\e[0m \e[40m$@\e[0m"
+		@echo ""
+		@echo "\e[3;32mCompilation is completed !\e[0m"
 
 
 all:		${NAME}
 
 
 clean:		
-		${RM} ${O_PATH}
+		@${RM} ${O_PATH}
+		@echo "\e[91mRemoving\e[0m \e[40m${O_PATH}\e[0m"
 
 fclean:		clean
-		${RM} ${NAME}
+		@${RM} ${NAME}
+		@echo "\e[91mRemoving\e[0m \e[40m${NAME}\e[0m"
 		
-re:		libfclean fclean all
+space:		
+		@echo ""
+
+re:		fclean space  all
 
 
 .PHONY:		all clean fclean re libfclean aclean

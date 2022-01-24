@@ -1,13 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03op.c                                             :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:30:24 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 14:49:14 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/24 19:33:43 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+void	rra(t_stack *s)
+{
+	int	i;
+	int	tmp;
+
+	write(1, "rra\n", 4);
+	if (s->len_a < 2)
+		return ;
+	tmp = s->stack_a[s->len_a - 1];
+	i = s->len_a;
+	while (--i >= 0)
+		s->stack_a[i] = s->stack_a[i - 1];
+	s->stack_a[0] = tmp;
+}
+
+void	rrb(t_stack *s)
+{
+	int	i;
+	int	tmp;
+
+	write(1, "rrb\n", 4);
+	if (s->len_b < 2)
+		return ;
+	tmp = s->stack_b[s->len_b - 1];
+	i = s->len_b;
+	while (--i >= 0)
+		s->stack_b[i] = s->stack_b[i - 1];
+	s->stack_b[0] = tmp;
+}
+
+void	rrr(t_stack *s)
+{
+	int	i;
+	int	tmp;
+
+	write(1, "rrr\n", 4);
+	if (s->len_a < 2 || s->len_b < 2)
+		return ;
+	tmp = s->stack_a[s->len_a - 1];
+	i = s->len_a;
+	while (--i >= 0)
+		s->stack_a[i] = s->stack_a[i - 1];
+	s->stack_a[0] = tmp;
+	tmp = s->stack_b[s->len_b - 1];
+	i = s->len_b;
+	while (--i >= 0)
+		s->stack_b[i] = s->stack_b[i - 1];
+	s->stack_b[0] = tmp;
+}

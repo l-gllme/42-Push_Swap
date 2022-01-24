@@ -6,11 +6,11 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 19:01:37 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/20 14:02:10 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/24 19:30:07 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/tools.h"
 
 static int	check_charset(char c, char current)
 {

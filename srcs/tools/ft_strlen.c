@@ -6,11 +6,11 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 14:15:18 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/20 14:02:37 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/24 19:30:20 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/tools.h"
 
 size_t	ft_strlen(const char *s)
 {
