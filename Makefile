@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/24 16:24:56 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/24 16:29:56 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,11 @@ FILES	=	./main.c \
 		operations/rotate.c \
 		operations/swap_push.c \
 
-SRCS_PATH =	./srcs/
-OBJS_PATH =	./objs/
+S_PATH	=	./srcs/
+O_PATH	=	./objs/
 
-SRCS	=	${addprefix ${SRCS_PATH}, ${FILES}}
-OBJS	=	${addprefix ${OBJS_PATH}, ${FILES:.c=.o}}
+SRCS	=	${addprefix ${S_PATH}, ${FILES}}
+OBJS	=	${addprefix ${O_PATH}, ${FILES:.c=.o}}
 
 NAME	=	push_swap
 
@@ -35,19 +35,20 @@ RM	=	rm -rf
 
 CFLAGS	=	-Wall -Wextra -Werror
 
-${OBJS_PATH}%.o:${SRCS_PATH}%.c
-		mkdir -p ${dir $@}
-		${CC} ${CFLAGS} -c $< -o $@
+${O_PATH}%.o:	${S_PATH}%.c
+		@mkdir -p ${dir $@}
+		@${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}:	${OBJS}
-		${CC} ${OBJS} -o ${NAME}
+		@echo "Compiling..."
+		@${CC} ${OBJS} -o ${NAME}
 
 
 all:		${NAME}
 
 
 clean:		
-		${RM} ${OBJS_PATH}
+		${RM} ${O_PATH}
 
 fclean:		clean
 		${RM} ${NAME}
