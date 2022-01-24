@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:26:22 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 14:52:09 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/24 22:51:29 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_parse(char **av, t_stack *stacks)
 	if (ft_is_it_sorted(stacks->stack_a, stacks->len_a))
 	{
 		ft_free_stacks(stacks);
-		ft_error();
+		exit(1);
 	}
 	if (ft_check_dup(stacks->stack_a, stacks->len_a))
 	{
