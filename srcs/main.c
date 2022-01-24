@@ -6,13 +6,13 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:42:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 19:34:44 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/24 22:18:43 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void sprint(t_stack *stacks)
+/*static void sprint(t_stack *stacks)
 {
 	printf("Stack A\n");
 	int i = 0;
@@ -28,7 +28,7 @@ static void sprint(t_stack *stacks)
 		printf(">%d\n", stacks->stack_b[i]);
 		i++;
 	}
-}
+}*/
 
 int	main(int argc, char **argv)
 {
@@ -46,7 +46,6 @@ int	main(int argc, char **argv)
 		free(stacks);
 		exit(1);
 	}
-	rra(stacks);
-	sprint(stacks);
+	ft_sort(stacks);
 	return (0);
 }

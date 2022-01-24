@@ -6,20 +6,21 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/24 21:21:22 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/24 22:19:27 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILES	=	main.c \
-		parsing/parsing_tools.c \
-		parsing/main_parsing.c \
 		tools/tools.c \
-		tools/ft_strlen.c \
-		tools/ft_split.c \
 		tools/ft_atoi.c \
-		operations/reverse_rotate.c \
+		tools/ft_split.c \
+		tools/ft_strlen.c \
 		operations/rotate.c \
+		operations/r_rotate.c \
 		operations/swap_push.c \
+		sorting/main_sorting.c \
+		parsing/main_parsing.c \
+		parsing/parsing_tools.c \
 
 S_PATH	=	./srcs/
 O_PATH	=	./objs/
@@ -61,6 +62,5 @@ space:
 		@echo ""
 
 re:		fclean space  all
-
 
 .PHONY:		all clean fclean re libfclean aclean

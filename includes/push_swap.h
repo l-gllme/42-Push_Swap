@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 18:19:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 19:31:43 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/24 21:46:43 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,9 @@ void	rr(t_stack *s);
 void	rra(t_stack *s);
 void	rrb(t_stack *s);
 void	rrr(t_stack *s);
+
+/* ~-~-~ Sorting ~-~-~ */
+
+void	ft_sort(t_stack *s);
 
 #endif
