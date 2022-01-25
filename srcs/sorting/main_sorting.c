@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 21:39:50 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 22:51:49 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/25 15:14:24 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ static void	cut_sort(t_stack *s, int tmp, int pos)
 {
 	while (tmp != s->stack_a[0])
 	{
-		if (pos < s->len_a)
+		if (pos < s->len_a / 2)
 			ra(s);
 		else if (pos == 2)
 			sa(s);
 		else
 			rra(s);
 	}
+	if (s->len_b == 0 && ft_is_it_sorted(s->stack_a, s->len_a))
+		return ;
 	pb(s);
 }
 
@@ -46,6 +48,8 @@ void	ft_sort(t_stack *s)
 			i++;
 		}
 		cut_sort(s, tmp, pos);
+		if (s->len_b == 0 && ft_is_it_sorted(s->stack_a, s->len_a))
+			return ;
 	}
 	while (s->len_b != 0)
 		pa(s);

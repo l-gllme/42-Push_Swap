@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:42:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 22:18:43 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/25 15:47:52 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ int	main(int argc, char **argv)
 		free(stacks);
 		exit(1);
 	}
-	ft_sort(stacks);
+	if (stacks->len_a == 3)
+		ft_sort_3(stacks);
+	else
+		ft_sort(stacks);
 	return (0);
 }
