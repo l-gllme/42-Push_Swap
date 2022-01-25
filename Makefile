@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/24 22:19:27 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/25 12:50:30 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ FILES	=	main.c \
 		parsing/main_parsing.c \
 		parsing/parsing_tools.c \
 
-S_PATH	=	./srcs/
-O_PATH	=	./objs/
+S_PATH	=	srcs/
+O_PATH	=	objs/
 
 SRCS	=	${addprefix ${S_PATH}, ${FILES}}
 OBJS	=	${addprefix ${O_PATH}, ${FILES:.c=.o}}
