@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 14:48:21 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/25 16:07:02 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:11:02 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	ft_sort_3(t_stack *s)
 	}
 	else if (t[0] < t[1] && t[1] > t[2])
 		rra(s);
-	return ;
 }
 
 void	ft_sort_5(t_stack *s)
@@ -50,6 +49,12 @@ void	ft_sort_5(t_stack *s)
 			if (tmp > s->stack_a[i])
 				tmp = s->stack_a[i];
 			i++;
-		
-	i	}
+		}
+		while (tmp != s->stack_a[0])
+			ra(s);
+		pb(s);
+	}
+	ft_sort_3(s);
+	pa(s);
+	pa(s);
 }
