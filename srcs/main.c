@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:42:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/26 12:57:35 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/26 14:25:06 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ int	main(int argc, char **argv)
 		ft_sort_5(stacks);
 	else
 		ft_sort(stacks);
+	ft_free_stacks(stacks);
 	return (0);
 }

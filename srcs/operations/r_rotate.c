@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   r_rotate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:30:24 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 19:33:43 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/26 18:09:38 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	rra(t_stack *s)
 		return ;
 	tmp = s->stack_a[s->len_a - 1];
 	i = s->len_a;
-	while (--i >= 0)
+	while (--i > 0)
 		s->stack_a[i] = s->stack_a[i - 1];
 	s->stack_a[0] = tmp;
 }
@@ -37,7 +37,7 @@ void	rrb(t_stack *s)
 		return ;
 	tmp = s->stack_b[s->len_b - 1];
 	i = s->len_b;
-	while (--i >= 0)
+	while (--i > 0)
 		s->stack_b[i] = s->stack_b[i - 1];
 	s->stack_b[0] = tmp;
 }
@@ -52,12 +52,12 @@ void	rrr(t_stack *s)
 		return ;
 	tmp = s->stack_a[s->len_a - 1];
 	i = s->len_a;
-	while (--i >= 0)
+	while (--i > 0)
 		s->stack_a[i] = s->stack_a[i - 1];
 	s->stack_a[0] = tmp;
 	tmp = s->stack_b[s->len_b - 1];
 	i = s->len_b;
-	while (--i >= 0)
+	while (--i > 0)
 		s->stack_b[i] = s->stack_b[i - 1];
 	s->stack_b[0] = tmp;
 }

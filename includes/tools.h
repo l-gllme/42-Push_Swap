@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 12:46:18 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 19:31:27 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/26 18:21:07 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define TOOLS_H
 
 # include <stdlib.h>
+# include <stdio.h>
 # include <unistd.h>
 
 typedef long long int	t_lint;
