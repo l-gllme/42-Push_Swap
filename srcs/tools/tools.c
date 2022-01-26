@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 13:19:46 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 14:57:18 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/26 12:56:43 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_is_it_sorted(int *tab, int len)
 	while (i < len - 1)
 	{
 		j = 0;
-		while (tab[j + i])
+		while (i + j < len)
 		{
 			if (tab[i] > tab[j + i])
 				return (0);
