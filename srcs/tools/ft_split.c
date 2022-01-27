@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 19:01:37 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/26 18:24:02 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/01/27 12:31:46 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	words_count(char const *s, char c)
 
 	i = 0;
 	count = 0;
-	while (check_charset(c, s[i]))
+	while (check_charset(c, s[i]) && s[i])
 		i++;
 	while (s[i])
 	{
@@ -36,7 +36,8 @@ static int	words_count(char const *s, char c)
 			count++;
 		while (check_charset(c, s[i]))
 			i++;
-		i++;
+		if (s[i])
+			i++;
 	}
 	if (!check_charset(c, s[i]))
 		count++;
