@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/01/25 15:50:19 by lguillau         ###   ########.fr        #
+#    Updated: 2022/01/27 17:34:54 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,4 +64,4 @@ space:
 
 re:		fclean space  all
 
-.PHONY:		all clean fclean re libfclean aclean
+.PHONY:		all clean fclean re
