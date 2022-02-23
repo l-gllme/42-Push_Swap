@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:15:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/23 14:44:09 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:04:42 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,26 @@ void	rra_no_print(int *tab, int len)
 	tab[0] = tmp;
 }
 
-static int	*fill_lis(int *lis, int l_len, int save_pos, int *tmp)
+int	*fill_lis(int *lis, int l_len, int save_pos, int *tmp)
 {
 	int	i;
 
 	i = save_pos;
 	l_len--;
+	printf("%d\n", save_pos);
+	printf("%d\n", l_len);
 	lis[l_len] = tmp[save_pos];
-	while (save_pos-- >= 0)
+	while (--save_pos >= 0)
 	{
 		if (tmp[save_pos] < lis[l_len])
 		{
-			l_len--;
 			lis[l_len] = tmp[save_pos];
+			l_len--;
 		}
 	}
-	return (lis);
 }
 
-static int	try_lis(int *tmp, int len)
+int	try_lis(int *tmp, int len)
 {
 	int	l_len;
 	int	nb;
@@ -97,12 +98,20 @@ int	*find_lis(int *tmp, int len)
 	lis = malloc(sizeof(int) * (l_len));
 	if (!lis)
 		return (0);
+	//save_pos bonne case -- l_len len total
 	lis = fill_lis(lis, l_len, save_pos, tmp);
 	while (--l_len >= 0)
 	{
 		printf("%d\n", lis[l_len]);
 	}
 	return (lis);
+}
+
+int	main(void)
+{
+	int	tmp[10] = {0, 4, 6,1,2,10,7,3,8,9};
+	int 	len = 10;
+	find_lis(tmp, len);
 }
 
 void	ft_sort(t_stack *s)
@@ -137,5 +146,4 @@ void	ft_sort(t_stack *s)
 	else 
 		while (tmp[0] != nb)
 			ra_no_print(tmp, s->len_a);
-	find_lis(tmp, s->len_a);
 }
