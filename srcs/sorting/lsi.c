@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:15:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/23 16:01:07 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/23 17:23:51 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,11 @@ static int	try_lis(int *tmp, int len)
 	return (l_len);
 }
 
-int	*find_lis(int *tmp, int len)
+t_lis	*find_lis(int *tmp, int len, t_lis *l)
 {
 	int	l_len;
 	int	save_pos;
 	int	res;
-	int	*lis;
 
 	l_len = 0;
 	save_pos = len;
@@ -94,15 +93,29 @@ int	*find_lis(int *tmp, int len)
 			save_pos = len;
 		}
 	}
-	lis = malloc(sizeof(int) * (l_len));
-	if (!lis)
+	l->lis = malloc(sizeof(int) * (l_len));
+	if (!l->lis)
 		return (0);
-	lis = fill_lis(lis, l_len, save_pos, tmp);
+	l->lis = fill_lis(l->lis, l_len, save_pos, tmp);
+	l->l_len = l_len;
 	while (--l_len >= 0)
 	{
-		printf("%d\n", lis[l_len]);
+		printf("%d\n", l->lis[l_len]);
 	}
-	return (lis);
+	return (l);
+}
+
+int	is_in_lis(int nb, t_lis *l)
+{
+	int	i;
+
+	i = -1;
+	while (++i < l->l_len)
+	{
+		if (nb == l->lis[i])
+			return (1);
+	}
+	return (0);
 }
 
 void	ft_sort(t_stack *s)
@@ -111,6 +124,7 @@ void	ft_sort(t_stack *s)
 	int	i;
 	int	index;
 	int	nb;
+	t_lis	*l;
 	
 	// Dup stack a in tmp
 	tmp = malloc(sizeof(int *) * s->len_a);
@@ -137,14 +151,27 @@ void	ft_sort(t_stack *s)
 	else 
 		while (tmp[0] != nb)
 			ra_no_print(tmp, s->len_a);
-	find_lis(tmp, s->len_a);
+	l = malloc(sizeof(t_lis));
+	l = find_lis(tmp, s->len_a, l);
 	free(tmp);
-	i = -1;
-	while (++i < s->len_a)
+	while (s->len_a > l->l_len)
 	{
-		if (!is_in_lis(s->stack_a[i]))
+		i = 0;
+		while (is_in_lis(s->stack_a[i], l) && i < s->len_a)
+			i++;
+		if (i < s->len_a / 2)
+		{
+			nb = s->stack_a[i];
+			while (s->stack_a[0] != nb)
+				ra(s);
 			pb(s);
+		}
 		else
-			ra(s);
+		{
+			nb = s->stack_a[i];
+			while (s->stack_a[0] != nb)
+				rra(s);
+			pb(s);
+		}
 	}
 }

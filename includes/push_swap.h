@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 18:19:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/25 16:11:48 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/23 16:22:37 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ typedef struct s_list
 	int	len_b;
 
 }	t_stack;
+
+typedef struct s_lis
+{
+	int	*lis;
+	int	l_len;
+}	t_lis;
 
 /* ~-~-~ Global Tools ~-~-~ */
 
