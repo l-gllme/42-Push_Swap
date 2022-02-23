@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:15:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/23 14:44:09 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/23 16:01:07 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,4 +138,13 @@ void	ft_sort(t_stack *s)
 		while (tmp[0] != nb)
 			ra_no_print(tmp, s->len_a);
 	find_lis(tmp, s->len_a);
+	free(tmp);
+	i = -1;
+	while (++i < s->len_a)
+	{
+		if (!is_in_lis(s->stack_a[i]))
+			pb(s);
+		else
+			ra(s);
+	}
 }
