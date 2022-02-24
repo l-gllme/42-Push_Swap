@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:15:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/24 13:06:02 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/24 14:58:33 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,47 @@ int	is_in_lis(int nb, t_lis *l)
 			return (1);
 	}
 	return (0);
+}
+
+int	iter_a(t_stack *s, int nb)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	j = s->len_a;
+	while (++i < s->len_a - 1)
+	{
+		
+	}
+}
+
+int	find_max_place(t_stack *s, int nb)
+{
+}
+
+int	*check_pos_a(t_stack *s)
+{
+	int	i;
+	int	nb;
+	int	*tmp;
+
+	i = -1;
+	tmp = malloc(sizeof(int) * 2);
+	if (!tmp)
+		return (0);
+	while (++i < s->len_b)
+	{
+		nb = s->stack_b[i];
+		tmp[1] = i;
+		if (nb < s->stack_a[s->len_a - 1] && nb > s->stack_a[0])
+			tmp[0] = 0;
+		else if (iter_a(s, nb))
+			tmp[0] = iter_a(s, nb);
+		else
+			tmp[0] = find_max_place(s, nb);
+		return (tmp);
+	}
 }
 
 void	ft_sort(t_stack *s)
