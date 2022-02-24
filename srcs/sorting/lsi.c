@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:15:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/24 14:58:33 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:44:13 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,15 +120,34 @@ int	iter_a(t_stack *s, int nb)
 	int	j;
 
 	i = -1;
-	j = s->len_a;
-	while (++i < s->len_a - 1)
-	{
-		
-	}
+	j = s->len_a - 1;
+	while (++i < s->len_a / 2)
+		if (nb > s->stack_a[i] && nb < s->stack_a[i + 1])
+			return (i + 1);
+	while (--j > s->len_a / 2)
+		if (nb < s->stack_a[j] && nb > s->stack_a[j - 1])
+			return (j - 1);
+	return (0);
 }
 
-int	find_max_place(t_stack *s, int nb)
+int	find_max_place(t_stack *s)
 {
+	int	i;
+	int	index;
+	int	tmp;
+
+	index = 0;
+	tmp = s->stack_a[0];
+	i = -1;
+	while (++i < s->len_a - 1)
+	{
+		if (s->stack_a[i] > tmp)
+		{
+			tmp = s->stack_a[i];
+			index = i;
+		}
+	}
+	return (index + 1);
 }
 
 int	*check_pos_a(t_stack *s)
@@ -150,9 +169,10 @@ int	*check_pos_a(t_stack *s)
 		else if (iter_a(s, nb))
 			tmp[0] = iter_a(s, nb);
 		else
-			tmp[0] = find_max_place(s, nb);
-		return (tmp);
+			tmp[0] = find_max_place(s);
+		printf("{%d, %d}\n", tmp[0], tmp[1]);
 	}
+	return (tmp);
 }
 
 void	ft_sort(t_stack *s)
@@ -200,5 +220,8 @@ void	ft_sort(t_stack *s)
 		else
 			pb(s);
 	}
+	free(l->lis);
+	free(l);
 	//push best in b to a
+	check_pos_a(s);
 }
