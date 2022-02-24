@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:15:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/23 17:23:51 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/24 13:06:02 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,6 @@ t_lis	*find_lis(int *tmp, int len, t_lis *l)
 		return (0);
 	l->lis = fill_lis(l->lis, l_len, save_pos, tmp);
 	l->l_len = l_len;
-	while (--l_len >= 0)
-	{
-		printf("%d\n", l->lis[l_len]);
-	}
 	return (l);
 }
 
@@ -151,27 +147,17 @@ void	ft_sort(t_stack *s)
 	else 
 		while (tmp[0] != nb)
 			ra_no_print(tmp, s->len_a);
+	//find lis
 	l = malloc(sizeof(t_lis));
 	l = find_lis(tmp, s->len_a, l);
 	free(tmp);
+	//put not in lis to b
 	while (s->len_a > l->l_len)
 	{
-		i = 0;
-		while (is_in_lis(s->stack_a[i], l) && i < s->len_a)
-			i++;
-		if (i < s->len_a / 2)
-		{
-			nb = s->stack_a[i];
-			while (s->stack_a[0] != nb)
-				ra(s);
-			pb(s);
-		}
+		if (is_in_lis(s->stack_a[0], l))
+			ra(s);
 		else
-		{
-			nb = s->stack_a[i];
-			while (s->stack_a[0] != nb)
-				rra(s);
 			pb(s);
-		}
 	}
+	//push best in b to a
 }
