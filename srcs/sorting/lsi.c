@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:15:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/24 16:44:13 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:06:03 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,8 @@ int	find_max_place(t_stack *s)
 			index = i;
 		}
 	}
+	if (index + 1 > s->len_a / 2)
+		return (index + 1 - s->len_a);
 	return (index + 1);
 }
 
@@ -163,11 +165,18 @@ int	*check_pos_a(t_stack *s)
 	while (++i < s->len_b)
 	{
 		nb = s->stack_b[i];
-		tmp[1] = i;
-		if (nb < s->stack_a[s->len_a - 1] && nb > s->stack_a[0])
+		if (i < s->len_b / 2)
+			tmp[1] = i;
+		else
+			tmp[1] = i - s->len_b;
+		if (nb > s->stack_a[s->len_a - 1] && nb < s->stack_a[0])
 			tmp[0] = 0;
 		else if (iter_a(s, nb))
+		{
 			tmp[0] = iter_a(s, nb);
+			if (tmp[0] > s->len_a)
+				tmp[0] -= s->len_a;
+		}
 		else
 			tmp[0] = find_max_place(s);
 		printf("{%d, %d}\n", tmp[0], tmp[1]);
