@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:15:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/26 18:05:13 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/26 19:20:53 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ int	iter_a(t_stack *s, int nb)
 			return (i + 1);
 	while (--j > s->len_a / 2)
 		if (nb < s->stack_a[j] && nb > s->stack_a[j - 1])
-			return (j - 1);
+			return (j);
 	return (0);
 }
 
@@ -147,8 +147,8 @@ int	find_max_place(t_stack *s)
 			index = i;
 		}
 	}
-	if (index + 1 > s->len_a / 2)
-		return (index + 1 - s->len_a);
+	if (index > s->len_a / 2)
+		return (index - s->len_a);
 	return (index + 1);
 }
 
@@ -200,7 +200,7 @@ int	*check_pos_a(t_stack *s, int *ret)
 	while (++i < s->len_b)
 	{
 		nb = s->stack_b[i];
-		if (i < s->len_b / 2)
+		if (i <= s->len_b / 2)
 			tmp[1] = i;
 		else if (i == 0)
 			tmp[1] = i;
@@ -211,7 +211,7 @@ int	*check_pos_a(t_stack *s, int *ret)
 		else if (iter_a(s, nb))
 		{
 			tmp[0] = iter_a(s, nb);
-			if (tmp[0] > s->len_a)
+			if (tmp[0] > s->len_a / 2)
 				tmp[0] -= s->len_a;
 		}
 		else
@@ -221,6 +221,7 @@ int	*check_pos_a(t_stack *s, int *ret)
 			ret[0] = tmp[0];
 			ret[1] = tmp[1];
 		}
+	//	printf("{%d, %d}\n", tmp[0], tmp[1]);
 	}
 	free(tmp);
 	return (ret);
@@ -250,17 +251,17 @@ void	final_sort(int *tmp, t_stack *s)
 	}
 	else if (tmp[0] <= 0 && tmp[1] <= 0)
 	{
-		i = 1;
+		i = 0;
 		if (tmp[0] <= tmp[1])
 		{
-			while (--i > tmp[1])
+			while (i-- > tmp[1])
 				rrr(s);
 			while (i-- > tmp[0])
 				rra(s);
 		}
 		else if (tmp[0] >= tmp[1])
 		{
-			while (--i > tmp[0])
+			while (i-- > tmp[0])
 				rrr(s);
 			while (i-- > tmp[1])
 				rrb(s);
@@ -270,16 +271,16 @@ void	final_sort(int *tmp, t_stack *s)
 	{
 		while (++i < tmp[1])
 			rb(s);
-		i = 1;
-		while (--i > tmp[0])
+		i = 0;
+		while (i-- > tmp[0])
 			rra(s);
 	}
 	else if (tmp[0] >= 0 && tmp[1] <= 0)
 	{
 		while (++i < tmp[0])
 			ra(s);
-		i = 1;
-		while (--i > tmp[1])
+		i = 0;
+		while (i-- > tmp[1])
 			rrb(s);
 	}
 	pa(s);
