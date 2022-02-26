@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:15:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/25 18:06:03 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/26 13:21:24 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,13 +152,48 @@ int	find_max_place(t_stack *s)
 	return (index + 1);
 }
 
-int	*check_pos_a(t_stack *s)
+int	find_smallest(int *tmp)
+{
+	int	nb;
+	
+	if (tmp[0] == 0 && tmp[1] == 0)
+		nb = 0;
+	else if (tmp[0] >= 0 && tmp[1] >= 0)
+	{
+		if (tmp[0] > tmp[1])
+			nb = tmp[0];
+		else if (tmp[0] < tmp[1])
+			nb = tmp[1];
+		else
+			nb = tmp[0];
+	}
+	else if (tmp[0] <= 0 && tmp[1] <= 0)
+	{
+		if (tmp[0] < tmp[1])
+			nb = tmp[0] * -1;
+		else if (tmp[0] > tmp[1])
+			nb = tmp[1] * -1;
+		else
+			nb = tmp[0] * -1;
+	}
+	else if (tmp[0] < 0 && tmp[1] > 0)
+		nb = tmp[0] * -1 + tmp[1];
+	else if (tmp[0] > 0 && tmp[1] < 0)
+		nb = tmp[0] + tmp[1] * -1;
+	else
+		nb = 2147483647;
+	return (nb);
+}
+
+int	*check_pos_a(t_stack *s, int *ret)
 {
 	int	i;
 	int	nb;
 	int	*tmp;
 
 	i = -1;
+	ret[0] = 2000000000;
+	ret[1] = 2000000000;
 	tmp = malloc(sizeof(int) * 2);
 	if (!tmp)
 		return (0);
@@ -180,8 +215,15 @@ int	*check_pos_a(t_stack *s)
 		else
 			tmp[0] = find_max_place(s);
 		printf("{%d, %d}\n", tmp[0], tmp[1]);
+		if (find_smallest(tmp) < find_smallest(ret))
+		{
+			ret[0] = tmp[0];
+			ret[1] = tmp[1];
+
+		}
 	}
-	return (tmp);
+	free(tmp);
+	return (ret);
 }
 
 void	ft_sort(t_stack *s)
@@ -232,5 +274,7 @@ void	ft_sort(t_stack *s)
 	free(l->lis);
 	free(l);
 	//push best in b to a
-	check_pos_a(s);
+	tmp = malloc(sizeof(int) * 2);
+	tmp = check_pos_a(s, tmp);
+	printf("final {%d, %d}\n", tmp[0], tmp[1]);
 }
