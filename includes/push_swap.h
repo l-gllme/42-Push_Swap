@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 18:19:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/27 01:09:26 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/27 17:55:24 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	ft_sort(t_stack *s);
 void	ft_sort_3(t_stack *s);
 void	ft_sort_5(t_stack *s);
 void	main_lis_funct(t_stack *s);
-int	is_in_lis(int nb, t_lis *l);
+void	final_sort(int *tmp, t_stack *s);
+int		is_in_lis(int nb, t_lis *l);
+
 
 #endif

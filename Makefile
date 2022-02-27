@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/02/27 01:02:16 by lguillau         ###   ########.fr        #
+#    Updated: 2022/02/27 17:56:13 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ FILES	=	main.c \
 		operations/swap_push.c \
 		sorting/lsi.c \
 		sorting/five_sorting.c \
+		sorting/sorting.c \
 		sorting/lis_sort.c \
 		parsing/main_parsing.c \
 		parsing/parsing_tools.c \
