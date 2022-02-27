@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 00:40:13 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/27 17:47:16 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/27 18:29:00 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int	*fill_lis(int *lis, int l_len, int save_pos, int *tmp)
 
 	i = save_pos;
 	l_len--;
-	lis[l_len]= tmp[save_pos];
+	lis[l_len] = tmp[save_pos];
 	while (save_pos >= 0)
 	{
 		if (tmp[save_pos] < lis[l_len])
