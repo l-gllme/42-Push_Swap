@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rr.c                                               :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 15:39:25 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 16:21:29 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/27 01:01:19 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,18 @@ void	rr(t_stack *s)
 	while (++i < s->len_b)
 		s->stack_b[i] = s->stack_b[i + 1];
 	s->stack_b[s->len_b - 1] = tmp;
+}
+
+void	ra_no_print(int *tab, int len)
+{
+	int	i;
+	int	tmp;
+
+	if (len < 2)
+		return ;
+	i = -1;
+	tmp = tab[0];
+	while (++i < len)
+		tab[i] = tab[i + 1];
+	tab[len - 1] = tmp;
 }

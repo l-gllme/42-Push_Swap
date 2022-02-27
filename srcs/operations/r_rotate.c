@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 14:30:24 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/26 18:09:38 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/27 01:01:41 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,18 @@ void	rrr(t_stack *s)
 	while (--i > 0)
 		s->stack_b[i] = s->stack_b[i - 1];
 	s->stack_b[0] = tmp;
+}
+
+void	rra_no_print(int *tab, int len)
+{
+	int	i;
+	int	tmp;
+
+	if (len < 2)
+		return ;
+	tmp = tab[len - 1];
+	i = len;
+	while (--i > 0)
+		tab[i] = tab[i - 1];
+	tab[0] = tmp;
 }
