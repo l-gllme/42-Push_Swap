@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:15:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/27 01:09:01 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/27 17:37:49 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	iter_a(t_stack *s, int nb)
 	int	j;
 
 	i = -1;
-	j = s->len_a - 1;
+	j = s->len_a;
 	while (++i < s->len_a / 2)
 		if (nb > s->stack_a[i] && nb < s->stack_a[i + 1])
 			return (i + 1);
@@ -50,7 +50,7 @@ int	find_max_place(t_stack *s)
 	index = 0;
 	tmp = s->stack_a[0];
 	i = -1;
-	while (++i < s->len_a - 1)
+	while (++i < s->len_a)
 	{
 		if (s->stack_a[i] > tmp)
 		{
@@ -58,8 +58,10 @@ int	find_max_place(t_stack *s)
 			index = i;
 		}
 	}
+	if (index == s->len_a - 1)
+		return (0);
 	if (index > s->len_a / 2)
-		return (index - s->len_a);
+		return (index + 1 - s->len_a);
 	return (index + 1);
 }
 
@@ -96,6 +98,17 @@ int	find_smallest(int *tmp)
 	return (nb);
 }
 
+int	is_the_bigger(t_stack *s, int nb)
+{
+	int	i;
+
+	i = -1;
+	while (++i < s->len_a)
+		if (nb < s->stack_a[i])
+			return (0);
+	return (1);
+}
+
 int	*check_pos_a(t_stack *s, int *ret)
 {
 	int	i;
@@ -119,7 +132,7 @@ int	*check_pos_a(t_stack *s, int *ret)
 			tmp[1] = i - s->len_b;
 		if (nb > s->stack_a[s->len_a - 1] && nb < s->stack_a[0])
 			tmp[0] = 0;
-		else if (iter_a(s, nb))
+		else if (!is_the_bigger(s, nb))
 		{
 			tmp[0] = iter_a(s, nb);
 			if (tmp[0] > s->len_a / 2)
@@ -132,7 +145,7 @@ int	*check_pos_a(t_stack *s, int *ret)
 			ret[0] = tmp[0];
 			ret[1] = tmp[1];
 		}
-	//	printf("{%d, %d}\n", tmp[0], tmp[1]);
+		//printf("{%d, %d}\n", tmp[0], tmp[1]);
 	}
 	free(tmp);
 	return (ret);
@@ -142,22 +155,34 @@ void	final_sort(int *tmp, t_stack *s)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	if (tmp[0] >= 0 && tmp[1] >= 0)
 	{
 		if (tmp[0] >= tmp[1])
 		{
-			while(++i < tmp[1])
+			while(i < tmp[1])
+			{
 				rr(s);
-			while (i++ < tmp[0])
+				i++;
+			}
+			while (i < tmp[0])
+			{
 				ra(s);
+				i++;
+			}
 		}
 		else if (tmp[0] <= tmp[1])
 		{
-			while(++i < tmp[0])
+			while(i < tmp[0])
+			{
 				rr(s);
-			while (i++ < tmp[1])
+				i++;
+			}
+			while (i < tmp[1])
+			{
 				rb(s);
+				i++;
+			}
 		}
 	}
 	else if (tmp[0] <= 0 && tmp[1] <= 0)
@@ -165,34 +190,58 @@ void	final_sort(int *tmp, t_stack *s)
 		i = 0;
 		if (tmp[0] <= tmp[1])
 		{
-			while (i-- > tmp[1])
+			while (i > tmp[1])
+			{
 				rrr(s);
-			while (i-- > tmp[0])
+				i--;
+			}
+			while (i > tmp[0])
+			{
 				rra(s);
+				i--;
+			}
 		}
 		else if (tmp[0] >= tmp[1])
 		{
-			while (i-- > tmp[0])
+			while (i > tmp[0])
+			{
 				rrr(s);
-			while (i-- > tmp[1])
+				i--;
+			}
+			while (i > tmp[1])
+			{
 				rrb(s);
+				i--;
+			}
 		}
 	}
 	else if (tmp[0] <= 0 && tmp[1] >= 0)
 	{
-		while (++i < tmp[1])
+		while (i < tmp[1])
+		{
 			rb(s);
+			i++;
+		}
 		i = 0;
-		while (i-- > tmp[0])
+		while (i > tmp[0])
+		{
 			rra(s);
+			i--;
+		}
 	}
 	else if (tmp[0] >= 0 && tmp[1] <= 0)
 	{
-		while (++i < tmp[0])
+		while (i < tmp[0])
+		{
 			ra(s);
+			i++;
+		}
 		i = 0;
-		while (i-- > tmp[1])
+		while (i > tmp[1])
+		{
 			rrb(s);
+			i--;
+		}
 	}
 	pa(s);
 }
@@ -221,7 +270,6 @@ void	sort_smallest_in_front(t_stack *s)
 		while (s->stack_a[0] != nb)
 			ra(s);
 }
-
 void	ft_sort(t_stack *s)
 {
 	int	*tmp;
@@ -236,3 +284,19 @@ void	ft_sort(t_stack *s)
 	free(tmp);
 	sort_smallest_in_front(s);
 }
+/*
+void	ft_sort(t_stack *s)
+{
+	int	*tmp;
+	
+	main_lis_funct(s);
+	tmp = malloc(sizeof(int) * 2);
+	//while (s->len_b > 0)
+	//{
+		tmp = check_pos_a(s, tmp);
+	//	final_sort(tmp, s);
+	//}
+	free(tmp);
+	//sort_smallest_in_front(s);
+}
+*/
