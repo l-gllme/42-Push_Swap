@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:14:35 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/24 14:57:40 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/28 18:13:36 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_check_for_alpha(char *s)
 	return (0);
 }
 
-void	ft_check_argv(char **av)
+void	ft_check_argv(char **av, t_stack *s)
 {
 	int	i;
 
@@ -35,7 +35,10 @@ void	ft_check_argv(char **av)
 	while (av[i])
 	{
 		if (ft_check_for_alpha(av[i]))
+		{
+			free(s);
 			ft_error();
+		}
 		else
 			i++;
 	}

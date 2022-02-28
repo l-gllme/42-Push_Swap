@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 18:26:22 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/26 12:31:35 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/28 18:20:26 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@ int	ft_parse(char **av, t_stack *stacks)
 	int	ret;
 
 	i = -1;
-	ft_check_argv(av);
+	ft_check_argv(av, stacks);
 	ret = ft_create_stack(av, stacks);
 	if (ret == 0)
 		return (0);
-	if (ft_is_it_sorted(stacks->stack_a, stacks->len_a))
-	{
-		ft_free_stacks(stacks);
-		exit(1);
-	}
 	if (ft_check_dup(stacks->stack_a, stacks->len_a))
 	{
 		ft_free_stacks(stacks);
 		ft_error();
+	}
+	if (ft_is_it_sorted(stacks->stack_a, stacks->len_a))
+	{
+		ft_free_stacks(stacks);
+		exit(1);
 	}
 	return (1);
 }
@@ -90,7 +90,7 @@ int	ft_fill_stack(char **str, t_stack *stacks)
 		nb = ft_atoi(str[i]);
 		if (nb > 2147483647 || nb < -2147483648)
 		{
-			ft_free_stacks(stacks);
+			ft_full_free(stacks, str);
 			ft_error();
 		}
 		stacks->stack_a[i] = nb;

@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 13:19:46 by lguillau          #+#    #+#             */
-/*   Updated: 2022/01/26 12:56:43 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/02/28 18:22:03 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,25 @@
 
 void	ft_error(void)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
 void	ft_free_stacks(t_stack *s)
 {
+	free(s->stack_a);
+	free(s->stack_b);
+	free(s);
+}
+
+void	ft_full_free(t_stack *s, char **str)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
+		free(str[i]);
+	free(str);
 	free(s->stack_a);
 	free(s->stack_b);
 	free(s);
