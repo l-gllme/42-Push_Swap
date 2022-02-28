@@ -6,24 +6,39 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:23:17 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/28 17:08:49 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/03/01 00:27:48 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bonus.h"
 
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	while (*s1 && *s2 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
+}
+
+static void	call_op(t_stack *s, char *str)
+{
+	(void)s;
+	if (ft_strcmp(str, "pa") == 0)
+		printf("toto");
+}
+
 void	checker(t_stack *s)
 {
-	char	*c;
-	int	i;
+	char	*str;
 
-	i = -1;
-	(void)s;
-	c = malloc(sizeof(char) * 5);
-	while (read(0, c, 10))
+	str = get_next_line(0);
+	while (str)
 	{
-		printf("%s", c);
-		c[0] = 0;
+		call_op(s, str);
+		free(str);
+		str = get_next_line(0);
 	}
-		printf("\n");
+	free(str);
 }

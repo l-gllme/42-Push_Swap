@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 18:13:28 by lguillau          #+#    #+#              #
-#    Updated: 2022/02/28 16:36:19 by lguillau         ###   ########.fr        #
+#    Updated: 2022/03/01 00:10:29 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,8 @@ B_FILES	=	checker.c \
 		tools/ft_strlen.c \
 		parsing/main_parsing.c \
 		parsing/parsing_tools.c \
+		gnl/get_next_line.c \
+		gnl/get_next_line_utils.c \
 
 
 S_PATH	=	srcs/

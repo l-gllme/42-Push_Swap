@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 19:04:36 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/28 18:23:54 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/03/01 00:13:30 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BONUS_H
 
 # include "../includes/push_swap.h"
+# include "gnl/get_next_line.h"
 
 /* Silent op */
 
