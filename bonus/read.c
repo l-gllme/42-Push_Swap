@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:23:17 by lguillau          #+#    #+#             */
-/*   Updated: 2022/03/01 12:01:47 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:59:16 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static int	ft_strcmp(const char *s1, const char *s2)
 static void	quit_clean(char *str, t_stack *s)
 {
 	ft_free_stacks(s);
+	get_next_line(42);
 	free(str);
 	ft_error();
 }

@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 12:49:00 by lguillau          #+#    #+#             */
-/*   Updated: 2021/12/10 16:04:33 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/03/01 14:58:42 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ char	*get_next_line(int fd)
 	static char	*save[1024];
 	char		*str;
 
+	if (fd == 42)
+	{
+		free(save[0]);
+		return (NULL);
+	}
 	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);
 	save[fd] = get_read(save[fd], fd);
