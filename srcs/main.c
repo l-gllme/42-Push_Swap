@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 17:42:44 by lguillau          #+#    #+#             */
-/*   Updated: 2022/02/27 18:29:26 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/03/01 15:12:21 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	}
 	if (stacks->len_a == 3)
 		ft_sort_3(stacks);
-	else if (stacks->len_a == 5)
+	else if (stacks->len_a == 5 || stacks->len_a == 4)
 		ft_sort_5(stacks);
 	else
 		ft_sort(stacks);
