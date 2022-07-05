@@ -1,6 +1,6 @@
 # 42-Push_Swap
 
-Sorting algorithm program.
+Sorting algorithm
 
 You need to sort a list of integers with two stacks, a set of instructions, using the least amount of actions as possible.
 
